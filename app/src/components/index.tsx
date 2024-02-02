@@ -11,6 +11,7 @@ import BarLineToggle from './BarLineToggle'
 import NewsCard from './NewsCard'
 import Dropdown from './Dropdown'
 import OptionStrategyGenerated from './OptionStrategyGenerated'
+import SearchModal from './SearchModal'
 
 // This file just keeps the imports clean
 
@@ -27,5 +28,6 @@ export {
 	BarLineToggle,
 	NewsCard,
 	Dropdown,
-	OptionStrategyGenerated
+	OptionStrategyGenerated,
+	SearchModal
 }
