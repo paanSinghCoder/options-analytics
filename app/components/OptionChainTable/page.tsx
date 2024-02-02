@@ -36,7 +36,7 @@ const OptionChainTable = () => {
 								<div className="font-normal text-sm">{item.marketPrice}</div>
 								<div className="font-normal text-xs pt-1">{item.varPrice}</div>
 							</td>
-							<td className="px-6 py-4 font-semibold bg-gray-100">{item.oi}</td>
+							<td className="px-6 py-4 font-semibold bg-gray-100 text-center">{item.oi}</td>
 							<td className="px-6 py-4">
 								<div className="font-normal text-sm">{item.marketPrice}</div>
 								<div className="font-normal text-xs pt-1">{item.varPrice}</div>

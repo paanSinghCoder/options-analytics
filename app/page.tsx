@@ -18,7 +18,7 @@ export default function Home() {
 			<div className="max-w-7xl mx-auto px-8 pt-10">
 				<div className="flex items-center justify-between mb-10 w-full">
 					<div className="">Welcome, user</div>
-					<button className="bg-cyan-700 hover:bg-cyan-800 text-white font-normal text-xs py-2 px-5 rounded">
+					<button className="bg-cyan-700 hover:bg-cyan-800 text-white font-normal text-sm py-2 px-5 rounded">
 						Login to continue
 					</button>
 				</div>
