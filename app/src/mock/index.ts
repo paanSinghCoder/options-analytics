@@ -1,3 +1,5 @@
+import { getNumbersArray } from "../helpers"
+
 export const OPTION_CHAINS_DATA = [
 	{
 		contractName: 'NIFTY 50',
@@ -146,3 +148,22 @@ export const STOCK_OPTIONS_TABLE_DATA = [{
     oi: 682
 }]
 
+
+export const strategies = [
+	{ id: 0, title: 'Stradle' },
+	{ id: 1, title: 'Strangle' },
+	{ id: 2, title: 'Iron Condor' },
+	{ id: 3, title: 'Spread' },
+	{ id: 4, title: 'Iron Fly' },
+	{ id: 5, title: 'Jade Lizard' }
+]
+
+export const DEFAULT_DROPDOWN_DATA = [{ title: 'NIFTY' }, { title: 'BANKNIFTY' }, { title: 'FINNIFTY' }]
+
+export const INSTRUMENT_DROPDOWN_DATA = [{ title: 'CALL' }, { title: 'PUT' }, { title: 'FUTURE' }]
+
+export const EXPIRY_DROPDOWN_DATA = [{ title: '2024-02-8' }, { title: '2024-02-15' }, { title: '2024-02-22' }, { title: '2024-02-29' }, { title: '2024-03-07' }, { title: '2024-03-28' }, { title: '2024-04-25' }, { title: '2024-06-27' }]
+
+export const STRIKE_PRICE_DROPDOWN_DATA = getNumbersArray(1900, 50, 15).map((item: number) => ({ title: item }))
+
+export const POSITIONS_DROPDOWN_DATA = [{ title: 'SHORT' }, { title: 'LONG' }]

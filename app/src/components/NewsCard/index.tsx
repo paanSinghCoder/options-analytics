@@ -1,6 +1,6 @@
 const NewsCard = () => {
 	return (
-		<div className="border rounded-md w-full h-[680px] my-4">
+		<div className="border rounded-md w-full h-[620px] my-4">
 			<div className="flex justify-between items-center pr-4">
 				<h3 className="py-4 px-4 text-md border-b">Latest News</h3>
 				<div className="">
@@ -22,9 +22,7 @@ const NewsCard = () => {
 			<p className="opacity-80 text-sm py-4 px-4">
 				Regulatory troubles for the digital payments giant are mounting after the Reserve Bank of
 				India ordered its unit Paytm Payments Bank Ltd. to stop many of its activities, citing
-				persistent non-compliance and supervisory concerns. A conference call held after market
-				hours on Thursday failed to inspire investor confidence. At least five brokerages, including
-				JPMorgan Chase & Co. and Citigroup Inc.,
+				persistent non-compliance and supervisory concerns.
 			</p>
 			<p className="px-4 text-xs font-bold cursor-pointer">Read more</p>
 		</div>

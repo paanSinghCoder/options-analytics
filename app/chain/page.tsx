@@ -7,7 +7,7 @@ import {
 	NewsCard,
 	OptionChainTable,
 	TickerCards
-} from '../components'
+} from '../src/components'
 import { OPTION_CHAINS_DATA } from '../src/mock'
 
 const Chain = () => {

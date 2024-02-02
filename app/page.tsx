@@ -7,7 +7,7 @@ import {
 	StockOptionsTable,
 	StrategyBuilderCard,
 	TickerCards
-} from './components'
+} from './src/components'
 import { INDEX_OPTIONS_DATA, OPTION_CHAINS_DATA } from './src/mock'
 
 export default function Home() {

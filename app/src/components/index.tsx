@@ -9,6 +9,7 @@ import OptionChainTable from './OptionChainTable/page'
 import { Chart } from './Chart'
 import BarLineToggle from './BarLineToggle'
 import NewsCard from './NewsCard'
+import Dropdown from './Dropdown'
 
 // This file just keeps the imports clean
 
@@ -23,5 +24,6 @@ export {
 	OptionChainTable,
 	Chart,
 	BarLineToggle,
-	NewsCard
+	NewsCard,
+	Dropdown
 }
