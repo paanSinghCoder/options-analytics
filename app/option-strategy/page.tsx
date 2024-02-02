@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Dropdown, Navbar } from '../src/components'
+import { Chart, Dropdown, Navbar, OptionStrategyGenerated } from '../src/components'
 import {
 	EXPIRY_DROPDOWN_DATA,
 	INSTRUMENT_DROPDOWN_DATA,
@@ -8,10 +8,15 @@ import {
 	STRIKE_PRICE_DROPDOWN_DATA,
 	strategies
 } from '../src/mock'
-import { PlusCircleIcon, TrashIcon } from '@heroicons/react/outline'
+import { PlusCircleIcon, TrashIcon, FolderDownloadIcon } from '@heroicons/react/outline'
 
 const OptionStrategy = () => {
 	const [rowCount, setRowCount] = useState(3)
+	const [isGeneratedVisible, setIsGeneratedVisible] = useState(false)
+
+	const toggleGenerated = () => {
+		setIsGeneratedVisible(prev => !prev)
+	}
 
 	return (
 		<main className="pb-14">
@@ -38,6 +43,7 @@ const OptionStrategy = () => {
 					{strategies.map((item: any) => (
 						<button
 							key={item.id}
+							onClick={toggleGenerated}
 							className="hover:bg-cyan-700 hover:text-white font-normal  text-sm py-2 px-5 rounded-md border text-gray-700">
 							{item.title}
 						</button>
@@ -109,16 +115,38 @@ const OptionStrategy = () => {
 										/>
 									</td>
 									<td className="px-6 py-4">
-										<TrashIcon
-											className="h-5 w-5 text-gray-600 cursor-pointer hover:text-red-600"
-											onClick={() => null}
-										/>
+										{rowCount > 1 && (
+											<TrashIcon
+												className="h-5 w-5 text-gray-600 cursor-pointer hover:text-red-600"
+												onClick={() => setRowCount(prev => prev - 1)}
+											/>
+										)}
 									</td>
 								</tr>
 							))}
+							<tr className="border-t">
+								<th className="px-6 py-4"></th>
+								<td className="px-6 py-4"></td>
+								<td className="px-6 py-4"></td>
+								<td className="px-6 py-4"></td>
+								<td className="px-6 py-4">
+									{/* <button className="border font-normal text-sm py-2 px-8 rounded">Save</button> */}
+								</td>
+								<td className="px-6 py-4 flex justify-end">
+									<button
+										onClick={toggleGenerated}
+										className="bg-cyan-700 hover:bg-cyan-800 text-white font-normal text-sm py-2 px-6 rounded">
+										Generate
+									</button>
+								</td>
+								<td className="px-6 py-4">
+									<FolderDownloadIcon className="h-6 w-6 text-gray-600 cursor-pointer hover:text-blue-600" />
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
+				{isGeneratedVisible && <OptionStrategyGenerated />}
 			</div>
 		</main>
 	)

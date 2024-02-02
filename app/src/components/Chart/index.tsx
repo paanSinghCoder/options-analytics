@@ -56,7 +56,7 @@ export const data = {
 	]
 }
 
-export function Chart({ typeToggle = false }: { typeToggle: Boolean }) {
+export function Chart({ typeToggle = false }: { typeToggle?: Boolean }) {
 	if (typeToggle) {
 		return <Bar options={options} data={data} />
 	}

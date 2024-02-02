@@ -10,6 +10,7 @@ import { Chart } from './Chart'
 import BarLineToggle from './BarLineToggle'
 import NewsCard from './NewsCard'
 import Dropdown from './Dropdown'
+import OptionStrategyGenerated from './OptionStrategyGenerated'
 
 // This file just keeps the imports clean
 
@@ -25,5 +26,6 @@ export {
 	Chart,
 	BarLineToggle,
 	NewsCard,
-	Dropdown
+	Dropdown,
+	OptionStrategyGenerated
 }

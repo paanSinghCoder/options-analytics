@@ -3,12 +3,13 @@ import { useState } from 'react'
 import {
 	BarLineToggle,
 	Chart,
+	Dropdown,
 	Navbar,
 	NewsCard,
 	OptionChainTable,
 	TickerCards
 } from '../src/components'
-import { OPTION_CHAINS_DATA } from '../src/mock'
+import { EXPIRY_DROPDOWN_DATA, OPTION_CHAINS_DATA } from '../src/mock'
 
 const Chain = () => {
 	const [isChecked, setIsChecked] = useState(false)
@@ -29,7 +30,10 @@ const Chain = () => {
 						</div>
 						<div className="flex justify-between pb-8 pt-20 px-2">
 							<h3 className="font-semibold">NIFTY 50 Option Chain</h3>
-							<div>drop</div>
+							<div className="flex gap-2 items-center text-sm">
+								Expiry
+								<Dropdown menuItems={EXPIRY_DROPDOWN_DATA} />
+							</div>
 						</div>
 
 						<OptionChainTable />
