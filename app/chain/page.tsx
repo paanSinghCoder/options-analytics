@@ -1,6 +1,13 @@
 'use client'
 import { useState } from 'react'
-import { BarLineToggle, Chart, Navbar, OptionChainTable, TickerCards } from '../components'
+import {
+	BarLineToggle,
+	Chart,
+	Navbar,
+	NewsCard,
+	OptionChainTable,
+	TickerCards
+} from '../components'
 import { OPTION_CHAINS_DATA } from '../src/mock'
 
 const Chain = () => {
@@ -33,6 +40,7 @@ const Chain = () => {
 								Login to create a strategy
 							</div>
 						</div>
+						<NewsCard />
 					</div>
 				</div>
 			</div>

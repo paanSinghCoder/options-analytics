@@ -8,6 +8,8 @@ import GithubCard from './GithubCard'
 import OptionChainTable from './OptionChainTable/page'
 import { Chart } from './Chart'
 import BarLineToggle from './BarLineToggle'
+import NewsCard from './NewsCard'
+
 // This file just keeps the imports clean
 
 export {
@@ -20,5 +22,6 @@ export {
 	GithubCard,
 	OptionChainTable,
 	Chart,
-	BarLineToggle
+	BarLineToggle,
+	NewsCard
 }

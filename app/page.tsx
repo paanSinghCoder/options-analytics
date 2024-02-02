@@ -3,6 +3,7 @@ import {
 	Chart,
 	GithubCard,
 	Navbar,
+	NewsCard,
 	StockOptionsTable,
 	StrategyBuilderCard,
 	TickerCards
@@ -39,6 +40,7 @@ export default function Home() {
 					<div className="lg:col-span-1 sm:col-span-3">
 						<AcademyCard />
 						<StrategyBuilderCard />
+						<NewsCard />
 						<GithubCard />
 					</div>
 				</div>
