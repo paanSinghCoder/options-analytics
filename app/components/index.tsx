@@ -7,6 +7,7 @@ import StrategyBuilderCard from './StrategyBuilderCard'
 import GithubCard from './GithubCard'
 import OptionChainTable from './OptionChainTable/page'
 import { Chart } from './Chart'
+import BarLineToggle from './BarLineToggle'
 // This file just keeps the imports clean
 
 export {
@@ -18,5 +19,6 @@ export {
 	StrategyBuilderCard,
 	GithubCard,
 	OptionChainTable,
-	Chart
+	Chart,
+	BarLineToggle
 }
