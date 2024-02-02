@@ -1,5 +1,6 @@
 import {
 	AcademyCard,
+	Chart,
 	GithubCard,
 	Navbar,
 	StockOptionsTable,
@@ -25,6 +26,10 @@ export default function Home() {
 
 				<div className="pb-8 pt-10">Index Options</div>
 				<TickerCards cardData={INDEX_OPTIONS_DATA} />
+
+				{/* <div className="mt-16 px-32">
+					<Chart />
+				</div> */}
 
 				<div className="pb-8 pt-10">Stock Options</div>
 				<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
