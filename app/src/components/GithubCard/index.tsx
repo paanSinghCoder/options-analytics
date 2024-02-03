@@ -4,7 +4,7 @@ import { GITHUB_URL } from '../../constants/urls'
 const GithubCard = () => {
 	return (
 		<div
-			onClick={() => window.open(GITHUB_URL, '_blank')}
+			onClick={() => (typeof window !== 'undefined' ? window.open(GITHUB_URL, '_blank') : null)}
 			className="rounded-md border bg-card text-card-foreground cursor-pointer">
 			<div className="flex-col pl-4 py-6 grid grid-cols-[1fr_110px] items-start gap-4 space-y-0">
 				<div className="space-y-1">

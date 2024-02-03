@@ -4,7 +4,7 @@ import { ZANSKAR_HOME } from '../../constants/urls'
 const AcademyCard = () => {
 	return (
 		<div
-			onClick={() => window.open(ZANSKAR_HOME, '_blank')}
+			onClick={() => (typeof window !== 'undefined' ? window.open(ZANSKAR_HOME, '_blank') : null)}
 			className="w-full h-32 bg-rose-600 rounded-md cursor-pointer mb-3">
 			<div className="p-5 flex flex-row items-center text-white justify-between space-y-0 pb-2">
 				<h3 className="tracking-tight text-sm font-medium">Enroll for free </h3>
