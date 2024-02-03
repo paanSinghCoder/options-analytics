@@ -13,6 +13,7 @@ import {
 import { LOGIN_PAGE } from './src/constants/routes'
 import useAuthHandler from './src/hooks/useAuthHandler'
 import { INDEX_OPTIONS_DATA, OPTION_CHAINS_DATA } from './src/mock'
+import { BrowserView, MobileView } from 'react-device-detect'
 
 const HomePage = () => {
 	const { isLoggedIn, routeToUrl } = useAuthHandler()
@@ -57,7 +58,15 @@ const HomePage = () => {
 
 const Home = () => (
 	<Suspense fallback={<>Loading...</>}>
-		<HomePage />
+		<BrowserView>
+			<HomePage />
+		</BrowserView>
+		<MobileView>
+			<div className="w-screen h-screen flex items-center justify-center">
+				<img className="block h-12 w-auto" src="/icons/bull-dark.png" alt="zanskar" />
+				<p>Zanskar Securities webapp is best suited for desktop browsers.</p>
+			</div>
+		</MobileView>
 	</Suspense>
 )
 
