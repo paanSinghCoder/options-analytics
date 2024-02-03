@@ -1,3 +1,4 @@
+'use client'
 import { ZANSKAR_HOME } from '../../constants/urls'
 
 const AcademyCard = () => {

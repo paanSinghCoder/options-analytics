@@ -35,17 +35,11 @@ export default function Home() {
 				<TickerCards cardData={OPTION_CHAINS_DATA} />
 
 				<div className="pb-8 pt-10">Index Options</div>
-				<TickerCards cardData={INDEX_OPTIONS_DATA} />
-
-				{/* <div className="mt-16 px-32">
-					<Chart />
-				</div> */}
+				{/* <TickerCards cardData={INDEX_OPTIONS_DATA} /> */}
 
 				<div className="pb-8 pt-10">Stock Options</div>
 				<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-					<div className="lg:col-span-2 sm:col-span-3">
-						<StockOptionsTable />
-					</div>
+					<div className="lg:col-span-2 sm:col-span-3">{/* <StockOptionsTable /> */}</div>
 					<div className="lg:col-span-1 sm:col-span-3">
 						<AcademyCard />
 						<StrategyBuilderCard />

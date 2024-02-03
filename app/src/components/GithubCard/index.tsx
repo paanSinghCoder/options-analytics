@@ -1,3 +1,4 @@
+'use client'
 import { GITHUB_URL } from '../../constants/urls'
 
 const GithubCard = () => {

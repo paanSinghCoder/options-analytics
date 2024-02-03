@@ -1,3 +1,5 @@
+'use client'
+
 import { ENGLISH_NEWS, HINDI_NEWS, NEWS_COVER_IMG } from '../../constants/urls'
 
 const NewsCard = () => {
@@ -26,7 +28,6 @@ const NewsCard = () => {
 				India ordered its unit Paytm Payments Bank Ltd. to stop many of its activities, citing
 				persistent non-compliance and supervisory concerns.
 			</p>
-			{/* <p className="px-4 text-xs font-bold cursor-pointer">Read more</p> */}
 		</div>
 	)
 }

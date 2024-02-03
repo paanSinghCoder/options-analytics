@@ -2,6 +2,14 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { SearchIcon, LightningBoltIcon } from '@heroicons/react/outline'
+import useAuthHandler from '../../hooks/useAuthHandler'
+import {
+	HOME_PAGE,
+	LOGIN_PAGE,
+	OPTION_CHAIN_PAGE,
+	STRATEGY_BUILDER_PAGE
+} from '../../constants/routes'
+import { ZANSKAR_HOME } from '../../constants/urls'
 
 export default function SearchModal({
 	isOpen = true,
@@ -10,12 +18,10 @@ export default function SearchModal({
 	isOpen: boolean
 	setIsOpen: (bool: boolean) => any
 }) {
+	const { isLoggedIn, routeToUrl } = useAuthHandler()
+
 	function closeModal() {
 		setIsOpen(false)
-	}
-
-	function openModal() {
-		setIsOpen(true)
 	}
 
 	return (
@@ -53,23 +59,50 @@ export default function SearchModal({
 										placeholder="What are you looking for?"
 									/>
 								</Dialog.Title>
-								<div className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
+								<div
+									onClick={() => {
+										closeModal()
+										routeToUrl(OPTION_CHAIN_PAGE)
+									}}
+									className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
 									<LightningBoltIcon className="h-5 w-5 mr-2 text-gray-600" />
 									NIFTY 50 Option Chain
 								</div>
-								<div className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
+								<div
+									onClick={() => {
+										closeModal()
+										routeToUrl(STRATEGY_BUILDER_PAGE)
+									}}
+									className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
 									<LightningBoltIcon className="h-5 w-5 mr-2 text-gray-600" />
 									Strategy builder
 								</div>
-								<div className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
+								<div
+									onClick={() => {
+										closeModal()
+										window.open(ZANSKAR_HOME, '_blank')
+									}}
+									className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
 									<LightningBoltIcon className="h-5 w-5 mr-2 text-gray-600" />
 									Zanskar homepage
 								</div>
-								<div className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
-									<LightningBoltIcon className="h-5 w-5 mr-2 text-gray-600" />
-									Login to Dashboard
-								</div>
-								<div className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
+								{!isLoggedIn && (
+									<div
+										onClick={() => {
+											closeModal()
+											routeToUrl(LOGIN_PAGE)
+										}}
+										className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
+										<LightningBoltIcon className="h-5 w-5 mr-2 text-gray-600" />
+										Login to Dashboard
+									</div>
+								)}
+								<div
+									onClick={() => {
+										closeModal()
+										routeToUrl(HOME_PAGE)
+									}}
+									className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
 									<LightningBoltIcon className="h-5 w-5 mr-2 text-gray-600" />
 									Go to Homepage
 								</div>
