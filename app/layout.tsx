@@ -6,6 +6,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+	manifest: '/manifest.json',
 	title: 'Zanskar | Build scalable high performance trading strategies.',
 	description: 'Options trading analytics with Zanskar securities'
 }
