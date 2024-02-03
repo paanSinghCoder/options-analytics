@@ -1,6 +1,6 @@
 'use client'
 
-import { ENGLISH_NEWS, HINDI_NEWS, NEWS_COVER_IMG } from '../../constants/urls'
+import { ENGLISH_NEWS, HINDI_NEWS } from '../../constants/urls'
 
 const NewsCard = () => {
 	return (

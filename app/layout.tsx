@@ -18,6 +18,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<head>
+				<meta name="#000" />
+			</head>
 			<body className={inter.className}>
 				<Toaster position="top-center" />
 				{children}
