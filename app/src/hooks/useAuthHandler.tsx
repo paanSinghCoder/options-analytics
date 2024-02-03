@@ -1,8 +1,7 @@
 'use client'
 
 import toast from 'react-hot-toast'
-import { useRouter } from 'next/navigation'
-import queryString from 'query-string'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 import { HOME_PAGE, LOGIN_PAGE } from '../constants/routes'
 import { AUTH_LOGGED_IN, AUTH_LOGGED_OUT, AUTH_MODE } from '../constants'
@@ -10,9 +9,8 @@ import { AUTH_LOGGED_IN, AUTH_LOGGED_OUT, AUTH_MODE } from '../constants'
 const useAuthHandler = () => {
 	const router = useRouter()
 	const search = typeof window !== 'undefined' ? window.location.search : ''
-	// const searchParams = useSearchParams()
-	const mode = queryString.parse(search)[AUTH_MODE]
-	// const mode = searchParams.get(AUTH_MODE)
+	const searchParams = useSearchParams()
+	const mode = searchParams.get(AUTH_MODE)
 
 	/*
 	 *  @desc Check if the user is logged in
