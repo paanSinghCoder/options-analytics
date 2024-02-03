@@ -7,6 +7,7 @@ import {
 	Navbar,
 	NewsCard,
 	OptionChainTable,
+	Placeholder,
 	TickerCards
 } from '../src/components'
 import { EXPIRY_DROPDOWN_DATA, OPTION_CHAINS_DATA } from '../src/mock'
@@ -60,7 +61,7 @@ const ChainPage = () => {
 }
 
 const Chain = () => (
-	<Suspense fallback={<>Loading...</>}>
+	<Suspense fallback={<Placeholder text="Zanskar" />}>
 		<ChainPage />
 	</Suspense>
 )

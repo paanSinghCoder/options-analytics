@@ -12,6 +12,7 @@ import NewsCard from './NewsCard'
 import Dropdown from './Dropdown'
 import OptionStrategyGenerated from './OptionStrategyGenerated'
 import SearchModal from './SearchModal'
+import Placeholder from './Placeholder'
 
 // This file just keeps the imports clean
 
@@ -29,5 +30,6 @@ export {
 	NewsCard,
 	Dropdown,
 	OptionStrategyGenerated,
-	SearchModal
+	SearchModal,
+	Placeholder
 }

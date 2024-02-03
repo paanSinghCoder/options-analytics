@@ -3,7 +3,7 @@ import { Suspense, useState } from 'react'
 import { PlusCircleIcon, TrashIcon, FolderDownloadIcon } from '@heroicons/react/outline'
 import toast from 'react-hot-toast'
 
-import { Dropdown, Navbar, OptionStrategyGenerated } from '../src/components'
+import { Dropdown, Navbar, OptionStrategyGenerated, Placeholder } from '../src/components'
 import {
 	EXPIRY_DROPDOWN_DATA,
 	INSTRUMENT_DROPDOWN_DATA,
@@ -195,7 +195,7 @@ const OptionStrategyPage = () => {
 }
 
 const OptionStrategy = () => (
-	<Suspense fallback={<>Loading...</>}>
+	<Suspense fallback={<Placeholder text="Zanskar" />}>
 		<OptionStrategyPage />
 	</Suspense>
 )

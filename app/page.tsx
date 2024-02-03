@@ -6,6 +6,7 @@ import {
 	GithubCard,
 	Navbar,
 	NewsCard,
+	Placeholder,
 	StockOptionsTable,
 	StrategyBuilderCard,
 	TickerCards
@@ -57,15 +58,15 @@ const HomePage = () => {
 }
 
 const Home = () => (
-	<Suspense fallback={<>Loading...</>}>
+	<Suspense fallback={<Placeholder text="Zanskar" />}>
 		<BrowserView>
 			<HomePage />
 		</BrowserView>
 		<MobileView>
-			<div className="w-screen h-screen flex items-center justify-center">
-				<img className="block h-12 w-auto" src="/icons/bull-dark.png" alt="zanskar" />
-				<p>Zanskar Securities webapp is best suited for desktop browsers.</p>
-			</div>
+			<Placeholder
+				text="Webapp is best suited for desktop browsers."
+				subtext="Visit zanskar.vercel.app in a desktop browser"
+			/>
 		</MobileView>
 	</Suspense>
 )

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { brokers } from '../src/mock'
 import useAuthHandler from '../src/hooks/useAuthHandler'
 import { HOME_PAGE } from '../src/constants/routes'
+import { Placeholder } from '../src/components'
 
 const LoginPage = () => {
 	const { isLoggedIn, login, routeToUrl } = useAuthHandler()
@@ -95,7 +96,7 @@ const LoginPage = () => {
 }
 
 const Login = () => (
-	<Suspense fallback={<>Loading...</>}>
+	<Suspense fallback={<Placeholder text="Zanskar" />}>
 		<LoginPage />
 	</Suspense>
 )
