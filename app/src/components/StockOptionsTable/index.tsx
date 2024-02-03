@@ -1,9 +1,13 @@
+'use client'
 import { STOCK_OPTIONS_TABLE_DATA } from '@/app/src/mock'
 import useAuthHandler from '../../hooks/useAuthHandler'
 import { OPTION_CHAIN_PAGE } from '../../constants/routes'
+import useStockMarket from '../../hooks/useStockMarket'
+import { getRandomColor, getRandomNum } from '../../helpers'
 
 const StockOptionsTable = () => {
 	const { routeToUrl } = useAuthHandler()
+	const { price } = useStockMarket(1000)
 
 	return (
 		<div className="relative overflow-x-auto border rounded-md">
@@ -33,10 +37,14 @@ const StockOptionsTable = () => {
 								<div className="font-normal text-xs pt-1">{item.date}</div>
 							</th>
 							<td className="px-6 py-4">
-								<div className="font-semibold text-sm">{item.marketPrice}</div>
-								<div className="font-normal text-xs pt-1">{item.varPrice}</div>
+								<div className="font-semibold text-sm">{getRandomNum(price)}</div>
+								<div style={{ color: getRandomColor() }} className="font-normal text-xs pt-1">
+									₹{getRandomNum(price)}
+								</div>
 							</td>
-							<td className="px-6 py-4 font-semibold">{item.oi}</td>
+							<td style={{ color: getRandomColor() }} className="px-6 py-4 font-semibold w-[200px]">
+								{getRandomNum(price)}
+							</td>
 						</tr>
 					))}
 				</tbody>

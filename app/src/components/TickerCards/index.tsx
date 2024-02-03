@@ -1,10 +1,13 @@
 'use client'
 import { OPTION_CHAIN_PAGE } from '../../constants/routes'
+import { getRandomColor, getRandomNum } from '../../helpers'
 import useAuthHandler from '../../hooks/useAuthHandler'
+import useStockMarket from '../../hooks/useStockMarket'
 import { TickerCardType } from './TickerCards.types'
 
 const TickerCards = ({ cardData }: any) => {
 	const { routeToUrl } = useAuthHandler()
+	const { price } = useStockMarket(1000)
 
 	return (
 		<div className={`grid gap-4 md:grid-cols-4 lg:grid-cols-${cardData?.length ?? 3}`}>
@@ -17,8 +20,10 @@ const TickerCards = ({ cardData }: any) => {
 						<p className="text-xs opacity-60">{item.exchange}</p>
 					</div>
 					<div className="p-5 pt-0">
-						<div className="text-lg font-bold">{item.price}</div>
-						<p className="text-xs text-muted-foreground">{item.movingPrice}</p>
+						<div className="text-lg font-bold">{getRandomNum(price)}</div>
+						<p style={{ color: getRandomColor() }} className="text-xs text-muted-foreground">
+							₹{getRandomNum(price)}
+						</p>
 					</div>
 				</div>
 			))}

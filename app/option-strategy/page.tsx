@@ -14,11 +14,14 @@ import {
 import useAuthHandler from '../src/hooks/useAuthHandler'
 import { LOGIN_PAGE } from '../src/constants/routes'
 import { ZANSKAR_HOME } from '../src/constants/urls'
+import useStockMarket from '../src/hooks/useStockMarket'
+import { getRandomColor, getRandomNum } from '../src/helpers'
 
 const OptionStrategy = () => {
 	const [rowCount, setRowCount] = useState(3)
 	const [isGeneratedVisible, setIsGeneratedVisible] = useState(false)
 	const { isLoggedIn, routeToUrl } = useAuthHandler()
+	const { price } = useStockMarket(2000)
 
 	const toggleGenerated = () => {
 		if (!isLoggedIn) {
@@ -57,7 +60,10 @@ const OptionStrategy = () => {
 				<div className="w-full px-6 py-5 rounded-md border flex items-center justify-between">
 					<div className="flex items-center gap-4">
 						<Dropdown />
-						<div className="text-green-700 font-semibold">21853.8 🠹 156.35 (0.72%)</div>
+						<div style={{ color: getRandomColor() }} className="text-green-700 font-semibold">
+							{getRandomNum(price + 10000)} ⛖ ₹{getRandomNum(price - 1950)} (
+							{getRandomNum(price - 2020)})
+						</div>
 						<div className="text-xs font-normal border px-2 py-1 rounded-md">Lot size: 50</div>
 					</div>
 					{!isLoggedIn && (

@@ -7,3 +7,18 @@ export const getNumbersArray = (currentNumber: number = 21550, incrementValue: n
         return result
     })
 }
+
+export const getRandomNum = (value: number = 100) => {
+    const randomOffset = Math.random() * 20 - 10; // Generates a random number between -10 and 10
+  return (value + randomOffset).toFixed(2);
+}
+
+export const getRandomColor = (): string => {
+    const colors = ['green', 'red'];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    
+    return colors[randomIndex];
+};
+
+
+
