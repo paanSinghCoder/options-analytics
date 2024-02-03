@@ -1,48 +1,18 @@
 'use client'
+import { useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
-const brokers = [
-	{
-		id: 1,
-		name: 'Zerodha',
-		iconSrc: '/icons/zerodha-compact.svg',
-		url: '/'
-	},
-	{
-		id: 2,
-		name: 'Groww',
-		iconSrc: '/icons/groww-logo-compact.svg',
-		url: '/'
-	},
-	{
-		id: 3,
-		name: 'Upstox',
-		iconSrc: '/icons/upstox-logo-compact.png',
-		url: '/'
-	},
-	{
-		id: 4,
-		name: 'Angel One',
-		iconSrc: '/icons/angelone-logo-compact.svg',
-		url: '/'
-	},
-	{
-		id: 5,
-		name: '5Paisa',
-		iconSrc: '/icons/5paisa-logo-compact.jpeg',
-		url: '/'
-	},
-	{
-		id: 6,
-		name: 'ICICI',
-		iconSrc: '/icons/icicidirect-logo-compact.png',
-		url: '/'
-	}
-]
+import { brokers } from '../src/mock'
+import useAuthHandler from '../src/hooks/useAuthHandler'
 
 const Login = () => {
-	const router = useRouter()
+	const { isLoggedIn, login, routeToUrl } = useAuthHandler()
+
+	useEffect(() => {
+		if (isLoggedIn) {
+			routeToUrl()
+		}
+	}, [])
 
 	return (
 		<div className="container relative h-[100vh] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
@@ -54,17 +24,6 @@ const Login = () => {
 			<div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
 				<div className="absolute inset-0 bg-cyan-900"></div>
 				<div className="relative z-20 flex items-center text-lg font-medium gap-3">
-					{/* <svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						className="mr-2 h-6 w-6">
-						<path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"></path>
-					</svg> */}
 					<img src="/icons/bull.png" className="w-8 h-8" />
 					Zanskar
 				</div>
@@ -86,11 +45,11 @@ const Login = () => {
 					</div>
 					<div className="grid gap-6">
 						<div className="flex flex-wrap justify-around gap-2 w-full">
-							{brokers.map(item => (
+							{brokers.map((item: any) => (
 								<button
 									key={item.id}
 									style={{ minWidth: '100px', height: '100px' }}
-									onClick={() => router.replace(item.url)}
+									onClick={() => login()}
 									className="text-gray-800 font-normal py-2 px-4 border rounded-md hover:shadow text-sm flex flex-col justify-center gap-2 items-center flex-1"
 									type="button">
 									<img src={item.iconSrc} className="h-7 w-7" alt="" />
@@ -109,7 +68,7 @@ const Login = () => {
 							</div>
 						</div>
 						<button
-							onClick={() => router.replace('/')}
+							onClick={() => login()}
 							className="hover:shadow inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-12 px-4 py-2"
 							type="button">
 							<img src="/icons/google-compact.svg" alt="google login" className="mr-2 h-5 w-5" />

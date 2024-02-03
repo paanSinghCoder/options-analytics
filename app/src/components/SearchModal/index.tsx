@@ -67,7 +67,11 @@ export default function SearchModal({
 								</div>
 								<div className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
 									<LightningBoltIcon className="h-5 w-5 mr-2 text-gray-600" />
-									Login
+									Login to Dashboard
+								</div>
+								<div className="px-4 py-3 text-sm flex opacity-80 hover:bg-gray-50 cursor-pointer">
+									<LightningBoltIcon className="h-5 w-5 mr-2 text-gray-600" />
+									Go to Homepage
 								</div>
 							</Dialog.Panel>
 						</Transition.Child>

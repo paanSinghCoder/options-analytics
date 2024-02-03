@@ -1,5 +1,45 @@
 import { getNumbersArray } from "../helpers"
 
+
+export const brokers = [
+	{
+		id: 1,
+		name: 'Zerodha',
+		iconSrc: '/icons/zerodha-compact.svg',
+		url: '/'
+	},
+	{
+		id: 2,
+		name: 'Groww',
+		iconSrc: '/icons/groww-logo-compact.svg',
+		url: '/'
+	},
+	{
+		id: 3,
+		name: 'Upstox',
+		iconSrc: '/icons/upstox-logo-compact.png',
+		url: '/'
+	},
+	{
+		id: 4,
+		name: 'Angel One',
+		iconSrc: '/icons/angelone-logo-compact.svg',
+		url: '/'
+	},
+	{
+		id: 5,
+		name: '5Paisa',
+		iconSrc: '/icons/5paisa-logo-compact.jpeg',
+		url: '/'
+	},
+	{
+		id: 6,
+		name: 'ICICI',
+		iconSrc: '/icons/icicidirect-logo-compact.png',
+		url: '/'
+	}
+]
+
 export const OPTION_CHAINS_DATA = [
 	{
 		contractName: 'NIFTY 50',
