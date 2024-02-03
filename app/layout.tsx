@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
 	manifest: '/manifest.json',
 	title: 'Zanskar | Build scalable high performance trading strategies.',
-	description: 'Options trading analytics with Zanskar securities'
+	description: 'Options trading analytics with Zanskar securities',
+	themeColor: '#000'
 }
 
 export default function RootLayout({
@@ -18,9 +19,6 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<head>
-				<meta name="#000" />
-			</head>
 			<body className={inter.className}>
 				<Toaster position="top-center" />
 				{children}
