@@ -1,19 +1,21 @@
+import { GITHUB_URL } from '../../constants/urls'
+
 const GithubCard = () => {
 	return (
-		<div className="rounded-md border bg-card text-card-foreground">
+		<div
+			onClick={() => window.open(GITHUB_URL, '_blank')}
+			className="rounded-md border bg-card text-card-foreground cursor-pointer">
 			<div className="flex-col pl-4 py-6 grid grid-cols-[1fr_110px] items-start gap-4 space-y-0">
 				<div className="space-y-1">
-					<h3 className="font-semibold leading-none tracking-tight pb-3">paanSinghCoder/zanskar</h3>
+					<h3 className="font-semibold leading-none tracking-tight pb-3">
+						paanSinghCoder/options-analytics
+					</h3>
 					<p className="text-xs opacity-70 text-muted-foreground">
-						Open source project focused on demonstrating minimal and elegant UI for Zanskar -
-						Options Analytics platform. This is a dummy project.
+						Open source project focused on demonstrating minimal UI for Options Analytics and
+						Strategy builder platform. This is a dummy project.
 					</p>
 				</div>
-				<div className="flex  space-x-1 rounded-md bg-secondary text-secondary-foreground">
-					<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 py-2 px-3 shadow-none">
-						Github
-					</button>
-				</div>
+				<div className="flex  space-x-1 rounded-md bg-secondary text-secondary-foreground"></div>
 			</div>
 			<div className="px-4 pb-4 pt-0">
 				<div className="flex space-x-4 text-sm text-muted-foreground">

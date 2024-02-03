@@ -10,9 +10,12 @@ import {
 	TickerCards
 } from '../src/components'
 import { EXPIRY_DROPDOWN_DATA, OPTION_CHAINS_DATA } from '../src/mock'
+import { LOGIN_PAGE, STRATEGY_BUILDER_PAGE } from '../src/constants/routes'
+import useAuthHandler from '../src/hooks/useAuthHandler'
 
 const Chain = () => {
 	const [isChecked, setIsChecked] = useState(false)
+	const { isLoggedIn, routeToUrl } = useAuthHandler()
 
 	return (
 		<main className="pb-14">
@@ -40,8 +43,12 @@ const Chain = () => {
 					</div>
 					<div className="col-span-1">
 						<div className="border rounded-md w-full h-[600px] flex items-center justify-center">
-							<div className="text-sm opacity-80 font-normal px-4 py-2 border rounded-lg shadow hover:opacity-100 cursor-pointer">
-								Login to create a strategy
+							<div
+								onClick={() =>
+									isLoggedIn ? routeToUrl(STRATEGY_BUILDER_PAGE) : routeToUrl(LOGIN_PAGE)
+								}
+								className="text-sm opacity-80 font-normal px-4 py-2 border rounded-lg shadow hover:opacity-100 cursor-pointer">
+								{isLoggedIn ? 'Create a Strategy' : 'Login to create a strategy'}
 							</div>
 						</div>
 						<NewsCard />

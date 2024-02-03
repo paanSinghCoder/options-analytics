@@ -1,6 +1,10 @@
 import { STOCK_OPTIONS_TABLE_DATA } from '@/app/src/mock'
+import useAuthHandler from '../../hooks/useAuthHandler'
+import { OPTION_CHAIN_PAGE } from '../../constants/routes'
 
 const StockOptionsTable = () => {
+	const { routeToUrl } = useAuthHandler()
+
 	return (
 		<div className="relative overflow-x-auto border rounded-md">
 			<table className="w-full text-sm text-left opacity-80">
@@ -21,7 +25,9 @@ const StockOptionsTable = () => {
 					{STOCK_OPTIONS_TABLE_DATA.map((item: any) => (
 						<tr className="border-b" key={item.company}>
 							<th scope="row" className="px-6 py-4 whitespace-nowrap">
-								<div className="font-semibold text-sm hover:cursor-pointer hover:underline">
+								<div
+									onClick={() => routeToUrl(OPTION_CHAIN_PAGE)}
+									className="font-semibold text-sm hover:cursor-pointer hover:underline">
 									{item.company}
 								</div>
 								<div className="font-normal text-xs pt-1">{item.date}</div>

@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { PlusCircleIcon, TrashIcon, FolderDownloadIcon } from '@heroicons/react/outline'
+import toast from 'react-hot-toast'
 
 import { Dropdown, Navbar, OptionStrategyGenerated } from '../src/components'
 import {
@@ -11,12 +12,13 @@ import {
 	strategies
 } from '../src/mock'
 import useAuthHandler from '../src/hooks/useAuthHandler'
-import toast from 'react-hot-toast'
+import { LOGIN_PAGE } from '../src/constants/routes'
+import { ZANSKAR_HOME } from '../src/constants/urls'
 
 const OptionStrategy = () => {
 	const [rowCount, setRowCount] = useState(3)
 	const [isGeneratedVisible, setIsGeneratedVisible] = useState(false)
-	const { isLoggedIn } = useAuthHandler()
+	const { isLoggedIn, routeToUrl } = useAuthHandler()
 
 	const toggleGenerated = () => {
 		if (!isLoggedIn) {
@@ -42,7 +44,9 @@ const OptionStrategy = () => {
 				<Navbar />
 			</div>
 			<div className="max-w-7xl mx-auto px-8 pt-10">
-				<div className="w-full px-6 py-3 rounded-lg bg-cyan-700 text-white cursor-pointer flex justify-between items-center">
+				<div
+					onClick={() => window.open(ZANSKAR_HOME, '_blank')}
+					className="w-full px-6 py-3 rounded-lg bg-cyan-700 text-white cursor-pointer flex justify-between items-center">
 					<p className="text-md">
 						Welcome to Zanskar Option Strategy Builder. You can also enroll to Zanskar Academy to
 						learn Options Trading for free.
@@ -50,10 +54,19 @@ const OptionStrategy = () => {
 					<div className="text-white text-2xl">➜</div>
 				</div>
 				<h3 className="font-semibold text-xl my-6">Strategy Builder</h3>
-				<div className="w-full px-6 py-5 rounded-md border flex items-center gap-4">
-					<Dropdown />
-					<div className="text-green-700 font-semibold">21853.8 🠹 156.35 (0.72%)</div>
-					<div className="text-xs font-normal border px-2 py-1 rounded-md">Lot size: 50</div>
+				<div className="w-full px-6 py-5 rounded-md border flex items-center justify-between">
+					<div className="flex items-center gap-4">
+						<Dropdown />
+						<div className="text-green-700 font-semibold">21853.8 🠹 156.35 (0.72%)</div>
+						<div className="text-xs font-normal border px-2 py-1 rounded-md">Lot size: 50</div>
+					</div>
+					{!isLoggedIn && (
+						<div
+							onClick={() => routeToUrl(LOGIN_PAGE)}
+							className="text-sm opacity-80 font-normal px-4 py-2 border rounded-lg shadow hover:opacity-100 cursor-pointer">
+							Login to create a strategy
+						</div>
+					)}
 				</div>
 
 				<div className="w-full px-6 py-5 rounded-md border flex items-center gap-4 mt-4">
