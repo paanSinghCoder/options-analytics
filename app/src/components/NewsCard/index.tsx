@@ -18,7 +18,7 @@ const NewsCard = () => {
 				</div>
 			</div>
 
-			<img src="/news-cover.avif" className="w-full" alt="image" />
+			<img src="/news-cover-200c.avif" className="w-full" alt="image" />
 			<h3
 				onClick={() => (typeof window !== 'undefined' ? window.open(ENGLISH_NEWS, '_blank') : null)}
 				className="font-semibold py-4 px-4 opacity-80 cursor-pointer hover:underline">
