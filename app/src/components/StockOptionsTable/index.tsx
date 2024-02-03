@@ -10,7 +10,7 @@ const StockOptionsTable = () => {
 	const { price } = useStockMarket(1000)
 
 	return (
-		<div className="relative overflow-x-auto border sm:hidden rounded-md pr-4">
+		<div className="relative overflow-x-auto border rounded-md pr-4">
 			<table className="w-full text-sm text-left opacity-80">
 				<thead className="text-xs uppercase border-b">
 					<tr>
