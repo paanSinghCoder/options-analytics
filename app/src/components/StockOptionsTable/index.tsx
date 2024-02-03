@@ -10,7 +10,7 @@ const StockOptionsTable = () => {
 	const { price } = useStockMarket(1000)
 
 	return (
-		<div className="relative overflow-x-auto border rounded-md">
+		<div className="relative overflow-x-auto border sm:hidden rounded-md pr-4">
 			<table className="w-full text-sm text-left opacity-80">
 				<thead className="text-xs uppercase border-b">
 					<tr>
@@ -28,7 +28,7 @@ const StockOptionsTable = () => {
 				<tbody>
 					{STOCK_OPTIONS_TABLE_DATA.map((item: any) => (
 						<tr className="border-b" key={item.company}>
-							<th scope="row" className="px-6 py-4 whitespace-nowrap">
+							<th scope="row" className="px-6 py-4">
 								<div
 									onClick={() => routeToUrl(OPTION_CHAIN_PAGE)}
 									className="font-semibold text-sm hover:cursor-pointer hover:underline">
