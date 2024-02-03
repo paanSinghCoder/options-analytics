@@ -8,7 +8,6 @@ import { AUTH_LOGGED_IN, AUTH_LOGGED_OUT, AUTH_MODE } from '../constants'
 
 const useAuthHandler = () => {
 	const router = useRouter()
-	const search = typeof window !== 'undefined' ? window.location.search : ''
 	const searchParams = useSearchParams()
 	const mode = searchParams.get(AUTH_MODE)
 
