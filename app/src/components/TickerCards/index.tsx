@@ -13,6 +13,7 @@ const TickerCards = ({ cardData }: any) => {
 		<div className={`grid gap-4 md:grid-cols-4 lg:grid-cols-${cardData?.length ?? 3}`}>
 			{cardData.map((item: TickerCardType) => (
 				<div
+					key={item.contractName as any}
 					onClick={() => routeToUrl(OPTION_CHAIN_PAGE)}
 					className="rounded-md border bg-card text-card-foreground hover:shadow cursor-pointer">
 					<div className="p-5 flex flex-row items-center justify-between space-y-0 pb-2">
