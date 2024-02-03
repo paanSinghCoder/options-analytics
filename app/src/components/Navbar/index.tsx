@@ -1,11 +1,14 @@
 'use client'
+
 import { useState, useCallback, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+
 import { SearchModal, Searchbar } from '..'
+import useAuthHandler from '../../hooks/useAuthHandler'
+import { HOME_PAGE, LOGIN_PAGE, STRATEGY_BUILDER_PAGE } from '../../constants/routes'
 
 const Navbar: any = () => {
 	const [isOpen, setIsOpen] = useState(false)
-	const router = useRouter()
+	const { isLoggedIn, routeToUrl, logout } = useAuthHandler()
 
 	// handle what happens on key press
 	const handleKeyPress = useCallback((event: any) => {
@@ -28,13 +31,10 @@ const Navbar: any = () => {
 		<div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
 			<div className="relative flex items-center justify-between h-14">
 				<div className="flex-1 flex items-center">
-					<div className="text-md flex items-center gap-1 font-bold cursor-pointer">
-						<img
-							onClick={() => router.push('/')}
-							className="block h-7 w-auto"
-							src="/icons/bull-dark.png"
-							alt="zanskar"
-						/>
+					<div
+						onClick={() => routeToUrl(HOME_PAGE)}
+						className="text-md flex items-center gap-1 font-bold cursor-pointer">
+						<img className="block h-7 w-auto" src="/icons/bull-dark.png" alt="zanskar" />
 						Zanskar
 						{/* <span className="h-7 w-px mx-1 bg-gray-200" aria-hidden="true" /> */}
 						<div className="font-semibold text-sm opacity-60 leading-none pt-0.5 pl-0.5">
@@ -50,8 +50,16 @@ const Navbar: any = () => {
 											Go Handmade. Go Craftly!
 										</span> */}
 						<div className="ml-4 flex flex-row text-center items-center justify-center gap-6">
-							<span className="opacity-70 hover:opacity-100 cursor-pointer">Strategy Builder</span>
-							<span className="opacity-70 hover:opacity-100 cursor-pointer">Login</span>
+							<span
+								onClick={() => routeToUrl(STRATEGY_BUILDER_PAGE)}
+								className="opacity-70 hover:opacity-100 cursor-pointer">
+								Strategy Builder
+							</span>
+							<span
+								onClick={() => (isLoggedIn ? logout() : routeToUrl(LOGIN_PAGE))}
+								className="opacity-70 hover:opacity-100 cursor-pointer">
+								{isLoggedIn ? 'Logout' : 'Login'}
+							</span>
 						</div>
 					</div>
 				</div>

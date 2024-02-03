@@ -9,17 +9,26 @@ import { AUTH_LOGGED_IN, AUTH_LOGGED_OUT, AUTH_MODE } from '../constants'
 const useAuthHandler = () => {
 	const router = useRouter()
 	const searchParams = useSearchParams()
+	const mode = searchParams.get(AUTH_MODE)
 
 	/*
-	 *  @desc Check if user is logged in
+	 *  @desc Check if the user is logged in
 	 */
-	const isLoggedIn: boolean = searchParams.get(AUTH_MODE) === AUTH_LOGGED_IN
+	const isLoggedIn: boolean = mode === AUTH_LOGGED_IN
 
 	/*
 	 *  @desc Takes custom path to redirect. If shouldLogout=true,
 	 *  it will open page in logged out state else in current state.
 	 */
-	const routeToUrl = (route: string = HOME_PAGE, shouldLogout: boolean = false) => {
+	const routeToUrl = (route: string = HOME_PAGE, shouldLogout?: boolean | undefined) => {
+		/*
+		 *  Retaining the query param as it is if shouldLogout is not passed
+		 */
+		if (typeof shouldLogout === 'undefined') {
+			router.push(`${route}?${AUTH_MODE}=${mode ? mode : AUTH_LOGGED_OUT}`)
+			return
+		}
+
 		if (shouldLogout) {
 			toast.success('User logged out')
 			router.replace(`${route}?${AUTH_MODE}=${AUTH_LOGGED_OUT}`)

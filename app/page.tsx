@@ -1,6 +1,7 @@
+'use client'
+
 import {
 	AcademyCard,
-	Chart,
 	GithubCard,
 	Navbar,
 	NewsCard,
@@ -8,9 +9,13 @@ import {
 	StrategyBuilderCard,
 	TickerCards
 } from './src/components'
+import { LOGIN_PAGE } from './src/constants/routes'
+import useAuthHandler from './src/hooks/useAuthHandler'
 import { INDEX_OPTIONS_DATA, OPTION_CHAINS_DATA } from './src/mock'
 
 export default function Home() {
+	const { isLoggedIn, routeToUrl } = useAuthHandler()
+
 	return (
 		<main className="pb-14">
 			<div className="border-b">
@@ -19,9 +24,13 @@ export default function Home() {
 			<div className="max-w-7xl mx-auto px-8 pt-10">
 				<div className="flex items-center justify-between mb-10 w-full">
 					<div className="">Welcome, user</div>
-					<button className="bg-cyan-700 hover:bg-cyan-800 text-white font-normal text-sm py-2 px-5 rounded">
-						Login to continue
-					</button>
+					{!isLoggedIn && (
+						<button
+							onClick={() => routeToUrl(LOGIN_PAGE, true)}
+							className="bg-cyan-700 hover:bg-cyan-800 text-white font-normal text-sm py-2 px-5 rounded">
+							Login to continue
+						</button>
+					)}
 				</div>
 				<TickerCards cardData={OPTION_CHAINS_DATA} />
 

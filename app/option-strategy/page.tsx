@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react'
-import { Chart, Dropdown, Navbar, OptionStrategyGenerated } from '../src/components'
+import { PlusCircleIcon, TrashIcon, FolderDownloadIcon } from '@heroicons/react/outline'
+
+import { Dropdown, Navbar, OptionStrategyGenerated } from '../src/components'
 import {
 	EXPIRY_DROPDOWN_DATA,
 	INSTRUMENT_DROPDOWN_DATA,
@@ -8,14 +10,30 @@ import {
 	STRIKE_PRICE_DROPDOWN_DATA,
 	strategies
 } from '../src/mock'
-import { PlusCircleIcon, TrashIcon, FolderDownloadIcon } from '@heroicons/react/outline'
+import useAuthHandler from '../src/hooks/useAuthHandler'
+import toast from 'react-hot-toast'
 
 const OptionStrategy = () => {
 	const [rowCount, setRowCount] = useState(3)
 	const [isGeneratedVisible, setIsGeneratedVisible] = useState(false)
+	const { isLoggedIn } = useAuthHandler()
 
 	const toggleGenerated = () => {
+		if (!isLoggedIn) {
+			toast.error('Please login to generate')
+			return
+		}
+
 		setIsGeneratedVisible(prev => !prev)
+	}
+
+	const onSaveClick = () => {
+		if (isLoggedIn) {
+			toast.success('This is a dummy project. Cannot save the strategy')
+			return
+		}
+
+		toast.error('Please login to save the strategy')
 	}
 
 	return (
@@ -140,7 +158,10 @@ const OptionStrategy = () => {
 									</button>
 								</td>
 								<td className="px-6 py-4">
-									<FolderDownloadIcon className="h-6 w-6 text-gray-600 cursor-pointer hover:text-blue-600" />
+									<FolderDownloadIcon
+										onClick={onSaveClick}
+										className="h-6 w-6 text-gray-600 cursor-pointer hover:text-blue-600"
+									/>
 								</td>
 							</tr>
 						</tbody>
