@@ -61,7 +61,7 @@ const ChainPage = () => {
 }
 
 const Chain = () => (
-	<Suspense fallback={<Placeholder text="Zanskar" />}>
+	<Suspense fallback={<Placeholder text="TradeX" />}>
 		<ChainPage />
 	</Suspense>
 )

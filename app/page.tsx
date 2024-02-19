@@ -58,14 +58,14 @@ const HomePage = () => {
 }
 
 const Home = () => (
-	<Suspense fallback={<Placeholder text="Zanskar" />}>
+	<Suspense fallback={<Placeholder text="TradeX" />}>
 		<BrowserView>
 			<HomePage />
 		</BrowserView>
 		<MobileView>
 			<Placeholder
 				text="Webapp is best suited for desktop browsers."
-				subtext="Visit zanskar.vercel.app in a desktop browser"
+				subtext="Visit tradex.vercel.app in a desktop browser"
 			/>
 		</MobileView>
 	</Suspense>

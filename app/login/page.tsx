@@ -27,7 +27,7 @@ const LoginPage = () => {
 				<div className="absolute inset-0 bg-cyan-900"></div>
 				<div className="relative z-20 flex items-center text-lg font-medium gap-3">
 					<img src="/icons/bull.png" className="w-8 h-8" />
-					Zanskar
+					TradeX
 				</div>
 				<div className="relative z-20 mt-auto">
 					<blockquote className="space-y-2">
@@ -35,7 +35,7 @@ const LoginPage = () => {
 							“Navigate the Market Waves with Ease: Unleash the Power of Options analytics –
 							Analyze, Optimize, and Watch Your Profits Rise!”
 						</p>
-						<footer className="text-sm">Mayank Sachan</footer>
+						<footer className="text-sm">Founder</footer>
 					</blockquote>
 				</div>
 			</div>
@@ -43,7 +43,7 @@ const LoginPage = () => {
 				<div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
 					<div className="flex flex-col space-y-2 text-center">
 						<h1 className="text-xl font-semibold tracking-tight">Continue with your Broker</h1>
-						<p className="text-sm text-muted-foreground">Login or create a new Zanskar account</p>
+						<p className="text-sm text-muted-foreground">Login or create a new TradeX account</p>
 					</div>
 					<div className="grid gap-6">
 						<div className="flex flex-wrap justify-around gap-2 w-full">
@@ -96,7 +96,7 @@ const LoginPage = () => {
 }
 
 const Login = () => (
-	<Suspense fallback={<Placeholder text="Zanskar" />}>
+	<Suspense fallback={<Placeholder text="TradeX" />}>
 		<LoginPage />
 	</Suspense>
 )

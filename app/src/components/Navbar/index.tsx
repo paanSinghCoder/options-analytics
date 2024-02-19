@@ -34,8 +34,8 @@ const Navbar: any = () => {
 					<div
 						onClick={() => routeToUrl(HOME_PAGE)}
 						className="text-md flex items-center gap-1 font-bold cursor-pointer">
-						<img className="block h-7 w-auto" src="/icons/bull-dark.png" alt="zanskar" />
-						Zanskar
+						<img className="block h-7 w-auto" src="/icons/bull-dark.png" alt="TradeX" />
+						TradeX
 						{/* <span className="h-7 w-px mx-1 bg-gray-200" aria-hidden="true" /> */}
 						<div className="font-semibold text-sm opacity-60 leading-none pt-0.5 pl-0.5">
 							Securities

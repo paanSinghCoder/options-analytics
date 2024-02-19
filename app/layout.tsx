@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	manifest: '/manifest.json',
-	title: 'Zanskar | Build scalable high performance trading strategies.',
-	description: 'Options trading analytics with Zanskar securities',
+	title: 'TradeX | Build scalable high performance trading strategies.',
+	description: 'Options trading analytics with TradeX securities',
 	themeColor: '#000'
 }
 

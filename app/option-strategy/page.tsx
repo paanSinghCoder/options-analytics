@@ -13,7 +13,7 @@ import {
 } from '../src/mock'
 import useAuthHandler from '../src/hooks/useAuthHandler'
 import { LOGIN_PAGE } from '../src/constants/routes'
-import { ZANSKAR_HOME } from '../src/constants/urls'
+import { TRADEX_HOME } from '../src/constants/urls'
 import useStockMarket from '../src/hooks/useStockMarket'
 import { getRandomColor, getRandomNum } from '../src/helpers'
 
@@ -49,11 +49,11 @@ const OptionStrategyPage = () => {
 			<div className="max-w-7xl mx-auto px-8 pt-10">
 				<div
 					onClick={() =>
-						typeof window !== 'undefined' ? window.open(ZANSKAR_HOME, '_blank') : null
+						typeof window !== 'undefined' ? window.open(TRADEX_HOME, '_blank') : null
 					}
 					className="w-full px-6 py-3 rounded-lg bg-cyan-700 text-white cursor-pointer flex justify-between items-center">
 					<p className="text-md">
-						Welcome to Zanskar Option Strategy Builder. You can also enroll to Zanskar Academy to
+						Welcome to TradeX Option Strategy Builder. You can also enroll to TradeX Academy to
 						learn Options Trading for free.
 					</p>
 					<div className="text-white text-2xl">➜</div>
@@ -195,7 +195,7 @@ const OptionStrategyPage = () => {
 }
 
 const OptionStrategy = () => (
-	<Suspense fallback={<Placeholder text="Zanskar" />}>
+	<Suspense fallback={<Placeholder text="TradeX" />}>
 		<OptionStrategyPage />
 	</Suspense>
 )
