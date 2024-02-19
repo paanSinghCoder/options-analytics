@@ -4,6 +4,8 @@ Options analytics dashboard with dummy data built with Next JS, Tailwind, Typesc
 
 First, run the development server:
 
+Demo here: https://tradex-options.vercel.app
+
 ```bash
 npm run dev
 # or
