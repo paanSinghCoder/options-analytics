@@ -64,9 +64,7 @@ const LoginPage = () => {
 								<span className="w-full border-t"></span>
 							</div>
 							<div className="relative flex justify-center text-xs">
-								<span className="bg-background px-2 text-muted-foreground bg-white">
-									Or continue with
-								</span>
+								<span className="bg-background px-2 text-muted-foreground bg-white">Or</span>
 							</div>
 						</div>
 						<button
